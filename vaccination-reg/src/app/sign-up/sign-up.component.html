@@ -1,0 +1,94 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Vaccination Registration Information</h3>
+              <form #signInForm="ngForm">
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text" id="firstName" [(ngModel)] = "people.fname" placeholder="min 3 letters" name="first" class="form-control form-control-lg" required minlength="3"/>
+                      <label class="form-label" for="firstName">First Name</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text" id="lastName" [(ngModel)] = "people.lname" name="last" class="form-control form-control-lg" />
+                      <label class="form-label" for="lastName">Last Name</label>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 d-flex align-items-center">
+  
+                    <div class="form-outline datepicker w-100">
+                      <input type="text" class="form-control form-control-lg" [(ngModel)] = "people.dob" name="dob" id="birthdayDate" required/>
+                      <label for="birthdayDate" class="form-label">Birthday</label>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4 d-flex align-items-center">
+  
+                    <div class="form-outline datepicker w-100">
+                      <input
+                        type="text" class="form-control form-control-lg" [(ngModel)] = "people.gender" name="gender" id="Gender" required maxlength="1" placeholder="M or F"/>
+                      <label for="gender" class="form-label">Gender</label>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <div class="form-outline">
+                      <input type="email" id="emailAddress" [(ngModel)] = "people.email" name="email" class="form-control form-control-lg" required placeholder="xyz@abc.lmn" />
+                      <label class="form-label" for="emailAddress" >Email</label>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <div class="form-outline">
+                      <input type="password" id="password" [(ngModel)] = "people.password" name="password" class="form-control form-control-lg" required minlength="5" placeholder="min 5 characters"/>
+                      <label class="form-label" for="password">Password</label>
+                    </div>
+  
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-4 pb-2">
+    
+                      <div class="form-outline">
+                        <input type="tel" id="phonenumber" [(ngModel)] = "people.phno" placeholder="10 digit valid no." name="phonenumber" class="form-control form-control-lg" required minlength="10" maxlength="10"/>
+                        <label class="form-label" for="phonenumber">Phone number</label>
+                      </div>
+    
+                    </div>
+                    <div class="col-md-6 mb-4 pb-2">
+    
+                        <div class="form-outline">
+                          <input type="adhar" id="adhar" [(ngModel)] = "people.adhar" name="adhar" class="form-control form-control-lg" required/>
+                          <label class="form-label" for="adhar">Adhar Card No.</label>
+                        </div>
+  
+                      </div>
+                  </div>
+  
+                <div class="mt-4 pt-2">
+                  <input class="btn btn-primary btn-lg" type="submit" (click)="onSubmit()" value="Submit" [disabled]="!signInForm.valid"/>
+                </div>
+  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

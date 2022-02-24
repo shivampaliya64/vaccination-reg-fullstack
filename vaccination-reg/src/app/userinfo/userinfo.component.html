@@ -1,0 +1,15 @@
+<h1>Welcome 
+    {{people.fname}} {{people.lname}}</h1>
+<p> <strong>Date of Birth : </strong> {{people.dob}} <strong>Gender : </strong> {{people.gender}} </p> <br>
+<p><strong>Adhar : </strong> {{people.adhar}} <strong>Email : </strong> {{people.email}} </p><br>
+<p> <strong>Phone Number : </strong> {{people.phno}} </p><br>
+
+<div><h3>Select your vaccination preferences from below</h3></div>
+<select [(ngModel)]="vaccine" (change)="selected()">
+    <option *ngFor="let item of d" [ngValue]="item">{{item.name}}</option>
+</select>
+<br>
+  {{vaccine.name}} is selected
+<br>
+Press confirm to register your choice
+<input type="button" (click)=confirm() value="Confirm!">
